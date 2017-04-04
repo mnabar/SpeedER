@@ -1,0 +1,24 @@
+doctype html
+html
+head 
+  include ./partials/head.pug
+body(style='font-family:Lato; background:#E3EBF6')
+  .jumbotron(style='padding-top:0px; background:#20395E; color:white')
+    <a style='text-align:left; font-size:15px; padding-top: 1vw; margin-top:30px; margin-right:1.5vw' href="/medicalStaffProfile" class="btn btn-xl"> Back to Profile</a><h2 style='display:inline-block; vertical-align:bottom'>Unassign Doctors</h2>
+  .container.text-center
+    .row 
+      p(style="font-size:20px; border-top:2px solid #99ccff; padding-top:35px; border-bottom:2px solid #99ccff; padding-bottom:35px") If a doctor has finished treating a patient, make sure you unassign the doctor so they can treat another patient! 
+    form(id="unassignDoctorsForm" action="/update/doctorAssignments", method="POST")
+      - for(var i = 0; i < key.length; i++)
+          br
+          label(style="font-size:30px")
+            input(
+              type='checkbox'
+              name= 'email'
+              value= key[i]
+            )
+            |  #{doctorNames[i] + " (" + key[i] + ")"}
+      br
+      br
+      br
+      button.btn.btn-default(id="unassignDoctorsBtn" type="submit", style="background:#99ccff; font-size:30px") Unassign Doctors

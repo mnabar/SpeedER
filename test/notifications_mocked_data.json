@@ -1,0 +1,48 @@
+[ {
+
+    "model" : "Notification",
+    "data": {
+        "medic": "David Beckham",
+        "message": "Someone has a broken arm",
+        "sendDate": "2017-04-02 00:00:00.000 +00:00"
+    }
+    
+},
+
+{ 
+
+    "model" : "Notification",
+    "data": {
+        "medic": "Donald Trump",
+        "message": "I prefer my patients uninjured",
+        "sendDate": "2015-01-01 21:32:40.900 +00:00"
+    }
+    
+},
+{
+    "model" : "Notification",
+    "data": {
+        "medic": "John Smith",
+        "message": "Brain aneurysm in room 501",
+        "sendDate": "2016-11-22 07:21:00.032 +00:00"
+    }
+    
+},
+{
+    "model" : "Notification",
+    "data": {
+        "medic": "Harry Potter",
+        "message": "Head laceration. Possible scarring",
+        "sendDate": "2016-05-08 11:28:05.276 +00:00"
+    }
+    
+},
+{
+    "model" : "Notification",
+    "data": {
+        "medic": "Jack Kevorkian",
+        "message": "Broken hip",
+        "sendDate": "2013-05-06 02:53:19.837 +00:00"
+    }
+    
+}]

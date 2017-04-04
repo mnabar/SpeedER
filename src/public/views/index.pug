@@ -1,0 +1,125 @@
+doctype html
+html
+  include ./partials/head.pug
+<body id="page-top" class="index text-center" style="overflow-x: hidden; font-family:Lato">
+    <header>
+        p(style="font-size:15px; float:right") If you are experiencing a life threatening injury, DO NOT USE THIS APPLICATION AND CALL 911 IMMEDIATELY.&nbsp &nbsp
+        .container
+            .intro-text
+                .index-subtitle Welcome to
+                <div class="index-title">Speed<span style="color:#fed136">ER</span></div>
+                p(style="font-size:20px; border-top:2px solid #fed136; padding-top:35px; border-bottom:2px solid #fed136; padding-bottom:35px") We all know the pain and inconvenience of emergency room wait times for non-life-threatening injuries. SpeedER is a web application designed to help the patient find the shortest wait time near them, and help give doctors and hospital staff sufficient notice so that the ER experience runs more smoothly for everyone involved. 
+                br
+                br
+                br
+                <a href="#patient" class="btn btn-xl">Patient</a>&nbsp &nbsp &nbsp &nbsp 
+                <a href="#hospital" class="btn btn-xl">Hospital Administrator</a>&nbsp &nbsp &nbsp &nbsp
+                <a href="#doctor" class="btn btn-xl">Doctor</a>
+    </header>
+
+    <section id="patient" style="background:#CBE6FF; padding-top:120px; padding-bottom:130px">
+        .container
+            .row
+                .col-lg-12
+                    <h2 class="section-heading" style="font-size:50px">Injured?</h2><br>
+                    <h3 class="subtitle" style="text-transform:none; font-size:25px">Stay calm - we're here to help! Through these three steps, you will be able to find hospitals near you, and compare wait times to make the most informed decision about your health. Remember, if at any time your injury escalates, call 911 immediately.</h3><br><br><br>
+
+
+            <div class="row" style="padding-top:50px; margin-bottom:50px;border-bottom:2px solid #99ccff; border-top:2px solid #99ccff">
+                .col-md-4
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-user-o fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="steps">Make an account or sign in</h4>
+                    <p class="subtitle">Once you have an account, you will be able to store your hospital history, as well as keep track of injuries you reported in the past.</p>
+
+                .col-md-4
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-hospital-o fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="steps">Pick a hospital based on wait time</h4>
+                    <p class="subtitle">Take a look at our map view, loaded with the hospitals most convenient for you. You will see information about wait time, and location.</p>
+
+                <div class="col-md-4", style="padding-bottom:20px">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-plus-square fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="steps">Report your injury and you're ready to go!</h4>
+                    <p class="subtitle">Entering your injury will report it to doctors at the hospital you picked, so they are able to prepare for your arrival.</p><br><br><br>
+                </div>
+            </div>
+            <a href="/patient" class="btn btn-xl" style="font-size:30px">Get started!</a>
+    </section>
+    <section id="hospital" style="padding-top:120px; padding-bottom:130px">
+        .container
+            .row
+                .col-lg-12
+                    <h2 class="section-heading" style="font-size:50px">Hospital Administrators</h2><br>
+                    <h3 class="subtitle" style="text-transform:none; font-size:25px">SpeedER allows you to view incoming patients, as well as their injury reports. This way you can better assign doctors to patients, and be prepared for any surprises or complications.</h3><br><br><br>
+
+
+            <div class="row" style="padding-top:50px; margin-bottom:50px;border-bottom:2px solid #fed136; border-top:2px solid #fed136">
+                .col-md-4
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="steps">Make an account or sign in</h4>
+                    <p class="subtitle">Create an account with your hospital to manage doctors, incoming patients, and the current state of your ER.</p>
+
+                .col-md-4
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="steps">Approve, add, or remove doctors</h4>
+                    <p class="subtitle">Before doctors can appear available to be assigned to patients, you will be able to verify that they are employed at your hospital.</p>
+
+                .col-md-4
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-ambulance fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="steps">Recieve reports of incoming patients and assign them to doctors on call</h4>
+                    <p class="subtitle" style="padding-bottom:20px">Incoming patients will be sent over to your administrative interface. You will be able to assign them to doctors as they become available to keep the ER flowing.</p>
+            </div>
+            <a href="/hospitalLogin" class="btn btn-xl">Get started!</a>
+    </section>
+    <section id="doctor" style="background:#80bfff; padding-top:120px; padding-bottom:130px">
+        .container
+            .row
+                .col-lg-12
+                    <h2 class="section-heading" style="font-size:50px">Doctors</h2><br>
+                    <h3 class="subtitle" style="text-transform:none; font-size:25px">Registering with your hospital will allow administrators to assign incoming patients to you and help move along the ER experience.</h3><br><br><br>
+
+
+            <div class="row" style="padding-top:50px; margin-bottom:50px;border-bottom:2px solid #fed136; border-top:2px solid #fed136">
+                .col-md-4
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-user-md fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="steps">Create an account with your hospital</h4>
+                    <p class="subtitle">Fill out your information to help the ER experience run smoothly for everyone.</p>
+
+                .col-md-4
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-check-circle fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="steps">Wait for verification from an administrator</h4>
+                    <p class="subtitle">Once you have created an account, you will be approved by an administrator of your hospital before being added to the hospital's network.</p>
+
+                .col-md-4
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-medkit fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="steps">Get assigned incoming patients</h4>
+                    <p class="subtitle" style="padding-bottom:20px">Once you are registered and verified with your hospital, you will be assigned incoming patients via email containing the information provided in their injury report.</p>
+            </div>
+            <a href="/doctorSignup" class="btn btn-xl">Get started!</a>
+    </section>

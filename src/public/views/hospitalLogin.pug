@@ -1,0 +1,50 @@
+doctype html
+html
+  include ./partials/head.pug
+
+  body(style='font-family:Lato; background:#E3EBF6')
+    .jumbotron(style='padding-top:0px; background:#20395E; color:white')
+      p(style='text-align:right; font-size:15px; padding-bottom:20px; padding-top: 1vw; margin-right:1.5vw') Not a hospital staff member? <a href="/patient">Login as a patient</a> | <a href="/doctorSignup">Sign up as a doctor</a> 
+      h1(style='text-align:center') Welcome, hospital staff.
+
+    .container
+      .row
+        .col-sm-1
+        .col-sm-5(style='padding-right:40px')
+          h2 Login here
+          h5(style = 'color:#737373') Welcome back!
+          br
+          form(action="/hospitalLogin/login", method="POST")
+            p Email
+            input.form-control(type='email', name="email", placeholder="email")
+            br
+            p Password
+            input.form-control(type='password', name="password", placeholder="password")
+            br
+            button.btn.btn-default(type="submit", style="float:right; background:#99ccff") Log in
+        .col-sm-5(style='border-left:2px solid #99ccff; padding-left:40px',)
+          h2 Sign up now
+          h5(style = 'color:#737373') Register with your hospital!
+          br
+          form(id='pRegForm', name="patientReg", action="/hospitalLogin/signup", method="POST", style="line-height:15px")
+            p Name <p id='nameAlert' style="display:none; font-weight:bold; color:#0066ff"> Names can only have alphabetic characters </p>
+            input.form-control(id='regName', type='text', name="name", placeholder="e.g. Barack Obama")
+            br
+            p Hospital
+            select.form-control(name='hospitalName', type='text')
+              each hospital in hospitals
+                option= hospital
+            br
+            p Email <p id='emailAlert' style="display:none; font-weight:bold; color:#0066ff"> Please enter a valid email </p>
+            input.form-control(id='regEmail', type='email', name="email", placeholder="email")
+            br
+            p Phone <p id='phoneAlert' style="display:none; font-weight:bold; color:#0066ff"> Phone numbers can only contain numeric digits </p>
+            input.form-control(id='regPhone', type='text', name="phoneNumber", placeholder="e.g. 6789998212")
+            br
+            p Password <p id='pwdAlert' style="display:none; font-weight:bold; color:#0066ff"> Passwords must be a minimum of 7 characters </p>
+            input.form-control(id='regPwd', type='password', name="password", placeholder="password")
+            br
+            p Confirm your password <p id='pwdChkAlert' style="display:none; font-weight:bold; color:#0066ff"> Passwords do not match! </p>
+            input.form-control(id='regChkPwd', type='password', name="password2", placeholder="confirm password")
+            br
+            button.btn.btn-default(id="pRegBtn", type="submit", style="float:right; background:#99ccff") Register

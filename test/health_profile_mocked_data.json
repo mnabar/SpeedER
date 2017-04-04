@@ -1,0 +1,61 @@
+[{
+  
+  "model": "Patient",
+  "data": {
+    "name": "Amy Sitwala",
+    "email": "asitwala17@gmail.com",
+    "password": "thisisapassword",
+    "phoneNumber": "6262218836",
+    "age": 21,
+    "injury": "",
+    "resetPasswordToken": null,
+    "resetPasswordExpires": null
+    }
+  },
+
+  {
+
+  "model": "Patient",
+  "data": {
+    "name": "Second Entry",
+    "email": "second_entry@gmail.com",
+    "password": "makeyourpasswordslongnotintricate",
+    "phoneNumber": "6265065375",
+    "age": 65,
+    "injury": "",
+    "resetPasswordToken": null,
+    "resetPasswordExpires": null
+    }
+  },
+{
+  "model": "HealthProfile",
+  "data": {
+    "age": 21,
+    "height": 68,
+    "weight": 102,
+    "sex": "F",
+    "InsuranceProvider": "BlueCrossBlueShield",
+    "prescriptions": null,
+    "nonPrescribedDrugs": null,
+    "allergies": "amoxicillin",
+    "priorOperations": "fractured arm repair",
+    "email": "asitwala17@gmail.com",
+    "id": 1
+  }
+},
+{
+  "model": "HealthProfile",
+  "data": {
+    "age": 65,
+    "height": 73,
+    "weight": 160,
+    "sex": "M",
+    "InsuranceProvider": "HIPPO",
+    "prescriptions": null,
+    "nonPrescribedDrugs": "diphenhydramine",
+    "allergies": null,
+    "priorOperations": null,
+    "email": "second_entry@gmail.com",
+    "id": 2
+  }
+}]

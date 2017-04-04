@@ -1,0 +1,72 @@
+
+doctype html
+html
+	head
+		title SpeedER
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxaxQiU4-JO-_lINF3YXSn1ONVkWt4HHQ&callback=initMap", async, defer)
+		script(src="../js/speech.js")
+		script(src="../js/mapview.js")
+		style(type='text/css').
+			#map {
+				height: 100%;
+			}
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			#injury-search {
+				width: 400px;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				z-index: 1;
+			}
+			#injury-search-input {
+				width: 250px;
+			}
+			#btn-leave-map {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				z-index: 1;
+			}
+	body(onload="getLocation()")
+		include ./partials/confirm.pug
+		//- form.form-inline(id='injury-search')
+		//- 	.form-group
+		//- 		label(for='injury-search' class='sr-only') injury search
+		//- 		input.form-control(placeholder='Enter injury here' type='search' id='injury-search-input')
+		//- 		button(type='submit' class='btn btn-default' id='injury-search-submit') Search
+		a(href="/patientProfile" style='text-decoration:none;')
+			button.btn.btn-default(id="btn-leave-map") &#10094; Back to profile
+		div(id='map')
+		p(id='geoloc-err')
+		ul(style={display:'none'})
+			each hosp in hospitals
+				li
+					ul
+						li(name = 'hospId')
+							= hosp.id
+						li(name='hospName')
+							= hosp.name
+						li(name='hospPhone')
+							= hosp.phoneNumber
+						li(name='hospAddress')
+							= hosp.address
+						li(name='hospCity')
+							= hosp.city
+						li(name='hospState')
+							= hosp.state
+						li(name='hospZip')
+							= hosp.zipCode
+						li(name='hospWait')
+							= hosp.waitMins
+						li(name='hospLat')
+							= hosp.geometry.coordinates[0]
+						li(name='hospLng')
+							= hosp.geometry.coordinates[1]

@@ -1,0 +1,60 @@
+[{
+	"model": "Patient",
+	"data": {
+    "name": "Second Entry",
+    "email": "second_entry@gmail.com",
+    "password": "makeyourpasswordslongnotintricate",
+    "phoneNumber": "6265065375",
+    "injury": "I fractured my femur",
+    "age": 65,
+    "resetPasswordToken": null,
+    "resetPasswordExpires": null
+  }
+},
+{
+  
+  "model": "Patient",
+  "data": {
+    "name": "Amy Sitwala",
+    "email": "asitwala17@gmail.com",
+    "password": "thisisapassword",
+    "phoneNumber": "6262218836",
+    "injury": "I fractured my femur",
+    "age": 21,
+    "resetPasswordToken": null,
+    "resetPasswordExpires": null
+    }
+  },
+{
+	"model": "InjuryReport",
+	"data": {
+		"description": "broken arm",
+		"discomfortLevel": 5,
+		"timeInjured": "2016-05-07T02:22:40Z",
+		"timeFiled": "2016-07-07T09:01:35Z",
+		"fk_email": "second_entry@gmail.com",
+		"PatientEmail": null
+	}
+},
+{
+	"model": "InjuryReport",
+	"data": {
+		"description": "sprained wrist",
+		"discomfortLevel": 2,
+		"timeInjured": "2016-11-19T02:52:23Z",
+		"timeFiled": "2017-01-12T07:24:15Z",
+		"fk_email":  "second_entry@gmail.com",
+		"PatientEmail": null
+	}
+},
+{
+	"model": "InjuryReport",
+	"data": {
+		"description": "laceration",
+		"discomfortLevel": 3,
+		"timeInjured": "2016-11-19T02:52:23Z",
+		"timeFiled": "2017-01-12T07:24:15Z",
+		"fk_email":  "asitwala17@gmail.com",
+		"PatientEmail": null
+	}
+}]

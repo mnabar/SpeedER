@@ -1,0 +1,240 @@
+mixin space()
+  | !{' '}
+
+doctype html
+html
+  include ./partials/head.pug
+  body
+
+    // generic header
+
+    nav.navbar-default
+      .container-fluid
+        .navbar-header
+          h3= hospitalName
+        button(type=button).btn.btn-default.navbar-btn.navbar-right
+          span.glyphicon.glyphicon-cog(aria-hidden="true")
+
+    // make a an array of wait times, to be displayed in columns across the top
+
+    .row.container
+    .col-xs-12#current-wait-times
+      .col-xs-2
+        h6 Current wait times:
+      .col-xs-2
+        p.text Level 1
+        p.text 0 mins
+      .col-xs-2
+        p.text Level 2
+        p.text 5 mins
+      .col-xs-2
+        p.text Level 3
+        p.text 15 mins
+      .col-xs-2
+        p.text Level 4
+        p.text 45 mins
+      .col-xs-2
+        p.text Level 5
+        p.text 75 mins
+
+    // add three interactive buttons such that hospital administrators may view real-time lists of incoming/admitted/discharged patients
+    // -- functionality is TBD (iteration 2!)
+
+    ul.nav.nav-tabs.col-xs-12
+      li.active
+        a(data-target="#incoming", data-toggle="tab") Incoming
+          +space
+          span.badge 1
+      li
+        a(data-target="#admitted", data-toggle="tab") Admitted !{" "}
+          +space
+          span.badge 1
+      li
+        a(data-target="#discharged", data-toggle="tab") Discharged
+          +space
+          span.badge 1
+
+  // add some data to the aforementioned lists etc.
+  .tab-content
+
+    // make a table that will display an arbitrary number of incoming patients
+    .tab-pane.active#incoming
+      table.table
+          thead
+            tr
+              th #
+              td
+          tbody
+            tr
+              th(scope="row") 1
+              td
+
+              // for example, add one incoming (as an illustrative example)
+              // -- John Smith has a broken Jaw;
+              //    Note that we will permit the hospital to view insurance information and their health profile as well
+              //    Likewise, an additional functionality for 'admitting' the incoming patient will change their status from 
+              //    "incoming" to "admitted"
+
+                .patient-box
+                  h4.text Broken jaw
+                    +space
+                    button(type=button).btn.btn-danger.btn-xs Level 2
+                    button(type=button).btn.btn-primary.pull-right Admit patient
+                  p.text.small #12345
+                  p.text John Smith :
+                    button(type=button).btn.btn-default.btn-sm(data-toggle="modal", data-target="#12345-health")
+                      span.glyphicon.glyphicon-plus(aria-hidden="true")
+                      span Health info
+                    +space
+                    button(type=button).btn.btn-default.btn-sm(data-toggle="modal", data-target="#12345-insurance")
+                      span.glyphicon.glyphicon-list-alt(aria-hidden="true")
+                      span Insurance info
+      p.text-center.small End of incoming patient list
+
+
+    // the same as above -- we make a table showing the admitted patients & their corresponding information
+
+    .tab-pane#admitted
+      table.table
+          thead
+            tr
+              th #
+              td
+          tbody
+            tr
+              th(scope="row") 1
+              td
+
+              // as an illustrative example, we have an admitted patient "Donald Trump" who has a cough as their ailment
+              //  -- note that now, rather than 'admit' patient, we have the option to 'discharge' the patient, 
+              //     thus adding the patient to the 'discharged' list
+
+                .patient-box
+                  h4.text Cough
+                    +space
+                    button(type=button).btn.btn-danger.btn-xs Level 5
+                    button(type=button).btn.btn-primary.pull-right Discharge patient
+                  p.text.small #23456
+                  p.text Donald Trump :
+                    +space
+                    button(type=button).btn.btn-default.btn-sm(data-toggle="modal", data-target="#23456-health")
+                      span.glyphicon.glyphicon-plus(aria-hidden="true")
+                      span Health info
+                    +space
+                    button(type=button).btn.btn-default.btn-sm(data-toggle="modal", data-target="#23456-insurance")
+                      span.glyphicon.glyphicon-list-alt(aria-hidden="true")
+                      span Insurance info
+      p.text-center.small End of admitted patient list
+
+    // and finally, a table showing recently discharged patients and their corresponding information
+
+    .tab-pane#discharged
+      table.table
+          thead
+            tr
+              th #
+              td
+          tbody
+            tr
+              th(scope="row") 1
+              td
+
+              // as an illustrative example, a recently discharged patient 'Kim Kardashian' was admitted and then 
+              // discharged with a broken hand.  (All resemblances to any persons real or fictitious are purely coincidental).
+              //  We all the hospital to view their health profile and insurance info post-discharge.
+
+                .patient-box
+                  h4.text Broken hand
+                    +space
+                    button(type=button).btn.btn-danger.btn-xs Level 3
+                  p.text.small #34567
+                  p.text Kim Kardashian :
+                    +space
+                    button(type=button).btn.btn-default.btn-sm(data-toggle="modal", data-target="#34567-health")
+                      span.glyphicon.glyphicon-plus(aria-hidden="true")
+                      span Health info
+                    +space
+                    button(type=button).btn.btn-default.btn-sm(data-toggle="modal", data-target="#34567-insurance")
+                      span.glyphicon.glyphicon-list-alt(aria-hidden="true")
+                      span Insurance info
+      p.text-center.small End of discharged patient list
+
+
+
+    // on clicking for health info, a dialog box showed up; at present, this is an example of anticipated functionality
+    //  --- at the moment, these dialogs are directly assigned to a patient; later, this will not be so
+    #12345-health.modal.fade(role="dialog")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button", data-dismiss="modal") X
+            h4.modal-title John Smith (#12345)
+              button(type=button).btn.btn-danger.btn-xs Level 2
+          .modal-body
+            p.text [Health profile]
+          .modal-footer
+            button.btn.btn-default(data-dismiss="modal") Close
+
+    // likewise for insurance information (see above comment for health info)
+    #12345-insurance.modal.fade(role="dialog")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button", data-dismiss="modal") X
+            h4.modal-title John Smith (#12345)
+          .modal-body
+            p.text [Insurance info]
+          .modal-footer
+            button.btn.btn-default(data-dismiss="modal") Close
+
+    // same as above
+    #23456-health.modal.fade(role="dialog")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button", data-dismiss="modal") X
+            h4.modal-title Donald Trump (#23456)
+              +space
+              button(type=button).btn.btn-danger.btn-xs Level 5
+          .modal-body
+            p.text [Health profile]
+          .modal-footer
+            button.btn.btn-default(data-dismiss="modal") Close
+
+    // see above comments re: modals/dialogs
+    #23456-insurance.modal.fade(role="dialog")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button", data-dismiss="modal") X
+            h4.modal-title Donald Trump (#23456)
+          .modal-body
+            p.text [Insurance info]
+          .modal-footer
+            button.btn.btn-default(data-dismiss="modal") Close
+
+    // see above
+    #34567-health.modal.fade(role="dialog")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button", data-dismiss="modal") X
+            h4.modal-title Kim Kardashian (#34567)
+              +space
+              button(type=button).btn.btn-danger.btn-xs Level 3
+          .modal-body
+            p.text [Health profile]
+          .modal-footer
+            button.btn.btn-default(data-dismiss="modal") Close
+
+    // see above
+    #34567-insurance.modal.fade(role="dialog")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button", data-dismiss="modal") X
+            h4.modal-title Kim Kardashian (#34567)
+          .modal-body
+            p.text [Insurance info]
+          .modal-footer
+            button.btn.btn-default(data-dismiss="modal") Close

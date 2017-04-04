@@ -1,0 +1,67 @@
+[ {
+
+    "model" : "Hospital",
+    "data": {
+        "name": "University of Chicago Pritzker",
+        "id": 1,
+        "username": "frankie",
+        "password": "abc123abc",
+        "salt": "MH1iynr3uIZzXcGVn6EaDScEevqK3Gg",
+        "phoneNumber": "(312) 965-5309",
+        "email": "uchicago@uchicago.med.edu",
+        "address": null,
+        "city": null,
+        "state": null,
+        "zipCode": null,
+        "waitMins": null,
+        "geometry": null,
+        "resetPasswordToken": null,
+        "resetPasswordExpires": null
+    }
+    
+},
+
+
+{
+
+    "model" : "Hospital",
+    "data": {
+        "name": "Gotham Medical",
+        "id": 2,
+        "username": "joker",
+        "password": "batmanrules93",
+        "salt": "I0hUFyLVEffL2rfDvEl3cg7M761UEUhTb",
+        "phoneNumber": "(315) 238-1322",
+        "email": "joker@gotham.com",
+        "address": null,
+        "city": null,
+        "state": null,
+        "zipCode": null,
+        "waitMins": null,
+        "geometry": "29.12345928374871 , 48.203498018293",
+        "resetPasswordToken": null,
+        "resetPasswordExpires": null
+    }
+},
+
+{
+    "model" : "Hospital",
+    "data": {
+        "name": "CVS",
+        "id": 3,
+        "username": "jake",
+        "password": "jakefromstatefarm",
+        "salt": "i8bwTEgPC2klcSFz8qPOEn9IcxOshL3d8iIup",
+        "phoneNumber": "(123) 438-1322",
+        "email": "jake@statefarm.com",
+        "address": null,
+        "city": null,
+        "state": null,
+        "zipCode": null,
+        "waitMins": null,
+        "geometry": null,
+        "resetPasswordToken": "iminthewrongcommercial",
+        "resetPasswordExpires": "2017-02-27 00:00:00.000 +00:00"
+    }
+}
+]

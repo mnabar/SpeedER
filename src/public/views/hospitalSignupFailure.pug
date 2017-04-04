@@ -1,0 +1,31 @@
+doctype html
+html
+head 
+  include ./partials/head.pug
+  style(type='text/css').
+    html, body {
+      height: 100%;
+      background: #E3EBF6;
+    }
+    .flex-parent {
+      height: 100%;
+      display: flex;
+    }
+    .flex-child {
+      margin: auto;
+    }
+    p {
+      margin-bottom: 50px;
+    }
+    .btn-return, .btn-return:hover {
+      background-color: #99ccff;
+    }
+body(style='font-family:Lato; text-align:center')
+  .container.flex-parent 
+    .flex-child
+      .row 
+        h1 Medical Staff Member Sign Up Failed!
+        p Are you sure you didn't sign up with that email before? Revisit the sign in page, and see if that was the issue! 
+      .row 
+        form(action="/hospitalLogin", method="GET")
+          button.btn.btn-default.btn-return(type="submit") Return to the sign in page and try again! 

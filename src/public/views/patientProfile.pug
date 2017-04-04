@@ -1,0 +1,26 @@
+doctype html
+html
+	include ./partials/head.pug
+	include ./navbar.pug
+	body(style='font-family:Lato')
+		.jumbotron(style="padding:0px; padding-top:3vw")
+			p(style='padding:0px; text-align:center; font-size:3.5vw')= "Welcome, " + patientName + "!"
+			p(style='text-align:center; font-size: 1.1vw') How can SpeedER help you today?
+			hr(style='border-top:1px solid rgba(0,114,255,0.6)')
+		.container
+		.row
+			.col-sm-4
+				a(href='/patientSettings' style='text-decoration:none; color:#333')
+					div(style='background-color:none; border-radius: 1vw; margin-left:2vw; margin-right:2vw; padding-top:1vw; padding-bottom:5.5vw' onmouseover="this.style.backgroundColor='rgba(0,0,0,0.15)'" onmouseout="this.style.backgroundColor=''")
+						h3(style='text-align:center; margin-bottom:3vw') Health Profile
+						img(src="../images/healthProfile.png" alt="Health Profile Image" class="img-responsive" style='padding-left:0px; padding-right:0px; max-width:60%; height:auto; margin-left:auto; margin-right:auto')
+			.col-sm-4
+				a(href='/pastInjuries' style='text-decoration:none; color:#333')
+					div(style='background-color:none; border-radius: 1vw; margin-left:2vw; margin-right:2vw; padding-top:1vw; padding-bottom:5.5vw' onmouseover="this.style.backgroundColor='rgba(0,0,0,0.15)'" onmouseout="this.style.backgroundColor=''")
+						h3(style='text-align:center; margin-bottom:3vw') Past Injuries
+						img(src="../images/pastInjuries.png" alt="Past Injuries Image" class="img-responsive" style='padding-left:0px; padding-right:0px; max-width:60%; height:auto; margin-left:auto; margin-right:auto')
+			.col-sm-4
+				a(href='/report' style='text-decoration:none; color:#333')
+					div(style='background-color:none; border-radius: 1vw; margin-left:2vw; margin-right:2vw; padding-top:1vw; padding-bottom:5.5vw' onmouseover="this.style.backgroundColor='rgba(0,0,0,0.15)'" onmouseout="this.style.backgroundColor=''")
+						h3(style='text-align:center; margin-bottom:3vw') Find a Hospital
+						img(src="../images/findAHospital.png" alt="Find a Hospital Image" class="img-responsive" style='padding-left:0px; padding-right:0px; max-width:60%; height:auto; margin-left:auto; margin-right:auto')

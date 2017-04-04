@@ -1,0 +1,46 @@
+mixin space()
+  | !{' '}
+
+doctype html
+html
+  include ./partials/head.pug
+
+  body
+
+    // generic header
+    .jumbotron(style='padding-top:0px; background:#757575; color:white')
+      <a style='text-align:left; font-size:15px; padding-top: 1vw; margin-top:30px; margin-right:1.5vw' href="/patientProfile" class="btn btn-xl"> Back to Profile</a><h2 style='display:inline-block; vertical-align:bottom'> Past Injuries for &nbsp
+        =name
+      </h2>
+    nav.navbar-default
+      .container
+        each patient in info
+          table
+            tr
+              td
+                p.injury-text ID: #
+              td
+                p.injury-text
+                  = patient.id
+            tr
+              td
+                p.injury-text Description:
+                +space
+              td#description
+                p.injury-text
+                  = patient.description
+            tr
+              td
+                p.injury-text Discomfort level:
+                +space
+              td#discomfortLevel
+                p.injury-text
+                  = patient.discomfortLevel
+            tr
+              td
+                p.injury-text Time filed:
+                +space
+              td#timeInjured
+                p.injury-text
+                  = patient.createdAt
+          hr.injury-hr

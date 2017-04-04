@@ -1,0 +1,65 @@
+doctype html
+html
+head 
+  include ./partials/head.pug
+body(style='font-family:Lato; background:#E3EBF6')
+  .jumbotron(style='padding-top:0px; background:#20395E; color:white')
+      <a style='text-align:left; font-size:15px; padding-top: 1vw; margin-top:30px; margin-right:1.5vw' href="/medicalStaffProfile" class="btn btn-xl"> Back to Profile</a><h2 style='display:inline-block; vertical-align:bottom'>
+        = hospitalName
+        </h2>
+  .container 
+    .row
+      div(id="patients" style='text-align:center;' ondrop="drop(event)" ondragover="allowDrop(event)")
+        .col-sm-3
+          h3(style="margin-bottom:2vw") Patients
+          hr 
+          h4(style='color: rgba(255, 255, 255, 1); background-color: rgba(0,168,255,1); padding:0.5vw; border-radius: 0.5vw; border-bottom: 0.35vw solid rgba(0,114,255,1);') Levels 9 & 10
+          div(style='padding-bottom:2.5vw;')
+            each level in level5
+              p(id="patient"+level.email class="patient" draggable="true" ondragstart="drag(event)" style='background-color:rgba(0,0,0,0.3); padding:1vw; border-radius:0.5vw')= level.name + " | " + level.description 
+
+
+          h4(style='color: rgba(255, 255, 255, 1); background-color: rgba(0,168,255,0.8); padding:0.5vw; border-radius: 0.5vw; border-bottom: 0.35vw solid rgba(0,114,255,0.8);') Levels 7 & 8
+          div(style='padding-bottom:2.5vw;')
+            each level in level4
+              p(id="patient"+level.email class="patient" draggable="true" ondragstart="drag(event)" style='background-color:rgba(0,0,0,0.3); padding:1vw; border-radius:0.5vw')= level.name + " | " + level.description 
+
+
+          h4(style='color: rgba(255, 255, 255, 1); background-color: rgba(0,168,255,0.6); padding:0.5vw; border-radius: 0.5vw; border-bottom: 0.35vw solid rgba(0,114,255,0.6);') Levels 5 & 6 
+          div(style='padding-bottom:2.5vw;')
+            each level in level3
+              p(id="patient"+level.email class="patient" draggable="true" ondragstart="drag(event)" style='background-color:rgba(0,0,0,0.3); padding:1vw; border-radius:0.5vw;')= level.name + " | " + level.description 
+
+
+          h4(style='color: rgba(255, 255, 255, 1); background-color: rgba(0,168,255,0.4); padding:0.5vw; border-radius: 0.5vw; border-bottom: 0.35vw solid rgba(0,114,255,0.4);') Levels 3 & 4
+          div(style='padding-bottom:2.5vw;')
+            each level in level2
+              p(id="patient"+level.email class="patient" draggable="true" ondragstart="drag(event)" style='background-color:rgba(0,0,0,0.3); padding:1vw; border-radius:0.5vw')= level.name + " | " + level.description   
+
+
+          h4(style='color: rgba(255, 255, 255, 1); background-color: rgba(0,168,255,0.2); padding:0.5vw; border-radius: 0.5vw; border-bottom: 0.35vw solid rgba(0,114,255,0.2);') Levels 1 & 2
+          div(style='padding-bottom:2.5vw;')
+            each level in level1
+              p(id="patient"+level.email class="patient" draggable="true" ondragstart="drag(event)" style='background-color:rgba(0,0,0,0.3); padding:1vw; border-radius:0.5vw')= level.name + " | " + level.description 
+
+          hr(style="margin-top:2vw")
+
+        .col-sm-1
+        .col-sm-4
+
+          h3 Assign Patient to Doctor
+          hr 
+          p Click and drag patient and doctor and then click the button below!
+          div(id="dropArea" style='border: 1px solid rgba(0,0,0,0.3); border-radius:0.75vw; width:100%; padding:1vw; padding-bottom:19vw; margin-bottom: 2vw' ondrop="drop(event)" ondragover="allowDrop(event)")
+
+          button.btn.btn-default(type="submit" onclick="destroyBody('dropArea')") Make Assignment
+
+        .col-sm-1
+        .col-sm-3
+
+          h3(style="margin-bottom:2vw") Doctors
+          hr 
+          div(style="padding-bottom:4vw")
+            each doctor in doctors
+              p(id="doctor"+doctor.email class="doctor" draggable="true" ondragstart="drag(event)" style='background-color:rgba(0,114,188,0.9); padding:1vw; border-radius:0.5vw')= doctor.name
+          hr

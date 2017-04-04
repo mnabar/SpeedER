@@ -1,0 +1,78 @@
+[ {
+  
+  "model": "Patient",
+  "data": {
+    "name": "Amy Sitwala",
+    "email": "asitwala17@gmail.com",
+    "password": "$2a$10$C.GCDhnL30z66hsKB975ke4gRDQARDNOcBuuLOddFByYlwbbnF7k6",
+    "salt": "$2a$10$C.GCDhnL30z66hsKB975ke",
+    "phoneNumber": "6262218836",
+    "injury": "I broke my arm",
+    "age": 21,
+    "isVerified": null, 
+    "chosenHospital": 2,
+    "supervisingDoctor": "Dwayne Johnson",
+    "resetPasswordToken": null,
+    "resetPasswordExpires": null
+    }
+  },
+
+  {
+
+  "model": "Patient",
+  "data": {
+    "name": "Second Entry",
+    "email": "second_entry@gmail.com",
+    "password": "$2a$10$7dEYxDiW6aZVgu9bVV/WV.NsXjrshMUxnjiGM2pd/5jPse9ixVtPu",
+    "salt": "$2a$10$7dEYxDiW6aZVgu9bVV/WV.",
+    "phoneNumber": "6265065375",
+    "injury": "I fractured my femur",
+    "age": 65,
+    "isVerified": true, 
+    "chosenHospital": 1,
+    "supervisingDoctor": "Anand Kannappan",
+    "resetPasswordToken": null,
+    "resetPasswordExpires": null
+    }
+  },
+
+  {
+
+  "model": "Patient",
+  "data": {
+    "name": "Testing Repetition and Dates",
+    "email": "imadoglover4@gmail.com",
+    "password": "$2a$10$kHYFfjAXSEuPOKFIeoZOJuGZIG8I6INITkAX7xnr/98cWH7/SfZNO",
+    "salt": "$2a$10$kHYFfjAXSEuPOKFIeoZOJu",
+    "phoneNumber": "6262248614",
+    "injury": "I have a stomach ache",
+    "age": 40,
+    "isVerified": false, 
+    "chosenHospital": 10,
+    "supervisingDoctor": "James Bond",
+    "resetPasswordToken": null,
+    "resetPasswordExpires": "2017-04-02 00:00:00.000 +00:00"
+    }
+  },
+
+  {
+
+  "model": "Patient",
+  "data": {
+    "name": "Testing Password Tokens",
+    "email": "kevis16@yahoo.com",
+    "password": "INCLUDESALTHEREshouldBeEncryptedValue",
+    "salt": "INCLUDESALTHERE", 
+    "phoneNumber": "6268337225",
+    "injury": "I have a stomach ache",
+    "age": 40,
+    "isVerified": null, 
+    "chosenHospital": null,
+    "supervisingDoctor": null,
+    "resetPasswordToken": "randomsetofcharacters",
+    "resetPasswordExpires": "2017-02-27 00:00:00.000 +00:00"
+    }
+  }
+
+]
+

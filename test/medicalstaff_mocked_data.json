@@ -1,0 +1,87 @@
+[ {
+
+    "model" : "MedicalStaff",
+    "data": {
+        "name": "John Doe",
+        "email": "johndoe@gmail.com",
+        "password": "abc123",
+        "salt": "fFmKydV2lEizQit7uRJAtiUldDc9ak3V",
+        "phoneNumber": "(312) 867-5309",
+        "position": "Cardiothoracic Surgery",
+        "active": 1,
+        "unassigned": 0,
+        "resetPasswordToken": null,
+        "resetPasswordExpires": null
+    }
+    
+},
+
+{
+    "model" : "MedicalStaff",
+    "data": {
+        "name": "Amy Sitwala",
+        "email": "asitwala@gmail.com",
+        "password": "superSecurePassWordHere",
+        "salt": "9IEAGqO4zgDIFeswTbKlGr1Scyu8UeTAzRmpAXGcaH",
+        "phoneNumber": "(312) 444-5444",
+        "position": "Neurosurgeon",
+        "active": 0,
+        "unassigned": 1,
+        "resetPasswordToken": null,
+        "resetPasswordExpires": "2017-04-02 00:00:00.000 +00:00"
+    }
+    
+},
+
+{
+    "model" : "MedicalStaff",
+    "data": {
+        "name": "Forrest Sill",
+        "email": "fsill@gmail.com",
+        "password": "UChicagoMaroons",
+        "salt": "jk4q34H2OxF5Jwj76B6TeU8hZ3pKd7vkAdGU9X8",
+        "phoneNumber": "(772) 904-2309",
+        "position": "General Practitioner",
+        "active": 1,
+        "unassigned": 1,
+        "resetPasswordToken": "thisisarandomsetofcharacters",
+        "resetPasswordExpires": null
+    }
+    
+},
+
+{
+    "model" : "MedicalStaff",
+    "data": {
+        "name": "John Gonzalez",
+        "email": "iwishthefalconswon@gmail.com",
+        "password": "superbowl52wastheworst",
+        "salt": "NzmHU4sUK1kCqrHouy576N7Ny94acaso5WDZFvk2RxHA",
+        "phoneNumber": "(923) 237-3109",
+        "position": "General Practitioner",
+        "active": 1,
+        "unassigned": 0,
+        "resetPasswordToken": "thisisarandomsetofcharacterspart2",
+        "resetPasswordExpires": "2025-04-10 00:00:00.000 +00:00"
+    }
+    
+},
+
+{
+    "model" : "MedicalStaff",
+    "data": {
+        "name": "Idont Workhere",
+        "email": "gopackgo@gmail.com",
+        "password": "abc122292293",
+        "salt": "LejclkzFp7fuYaGrHg11cCH9sG3zyawijWcU0o4ue",
+        "phoneNumber": "(554) 999-9999",
+        "position": "",
+        "active": 0,
+        "unassigned": 0,
+        "resetPasswordToken": null,
+        "resetPasswordExpires": null
+    }
+    
+}
+
+]

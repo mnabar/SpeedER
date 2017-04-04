@@ -1,0 +1,32 @@
+doctype html
+html
+head 
+  include ./partials/head.pug
+  style(type='text/css').
+    html, body {
+      height: 100%;
+      background: #fff;
+    }
+    .flex-parent {
+      height: 100%;
+      display: flex;
+    }
+    .flex-child {
+      margin: auto;
+    }
+    p {
+      margin-bottom: 50px;
+    }
+    .btn-return, .btn-return:hover {
+      background:#7c4c4c; 
+      color: #fff;
+    }
+body(style='font-family:Lato; text-align:center')
+  .container.flex-parent
+    .flex-child 
+      .row 
+        h1 You are trying to access an unauthorized page. 
+      .row 
+        p Please sign in to access this page.
+        form(action="/hospitalLogin", method="GET")
+          button.btn.btn-default.btn-return(type="submit") Sign In

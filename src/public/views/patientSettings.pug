@@ -1,0 +1,84 @@
+mixin space()
+  | !{' '}
+
+doctype html
+html
+  include ./partials/head.pug
+  body
+
+    // generic header
+    .jumbotron(style='padding-top:0px; background:#757575; color:white')
+      <a style='text-align:left; font-size:15px; padding-top: 1vw; margin-top:30px; margin-right:1.5vw' href="/patientProfile" class="btn btn-xl"> Back to Profile</a><h2 style='display:inline-block; vertical-align:bottom'> Patient Records for &nbsp
+        =name
+      </h2>
+    nav.navbar-default
+      .container
+        h3 Medical History
+        br
+        form(action="/patientSettings", method="POST")
+          each patient in info
+            table
+              tr
+                td
+                  p ID:
+                td
+                  p #
+                    =patient.id
+              tr
+                td
+                  p Age:
+                  +space
+                td#age
+                  input(value= patient.age name="age")
+              tr
+                td
+                  p Height (inches):
+                  +space
+                td#height
+                  input(value= patient.height name="height")
+              tr
+                td
+                  p Weight (pounds):
+                  +space
+                td#weight
+                  input(value= patient.weight name="weight")
+              tr
+                td
+                  p Sex:
+                  +space
+                td#sex
+                  input(value= patient.sex name="sex")
+              tr
+                td
+                  p Surgery:
+                  +space
+                td#priorOperations
+                  input(value= patient.priorOperations name="priorOperations")
+              tr
+                td
+                  p Medication:
+                  +space
+                td#prescriptions
+                  input(value= patient.prescriptions name="prescriptions")
+              tr
+                td
+                  p Drug use:
+                  +space
+                td#nonPrescribedDrugs
+                  input(value= patient.nonPrescribedDrugs name="nonPrescribedDrugs")
+              tr
+                td
+                  p Allergies:
+                  +space
+                td#allergies
+                  input(value= patient.allergies name="allergies")
+            h3 Insurance
+            br
+            table
+              tr
+                td
+                  p Provider:
+                td#insurance
+                  input(value= patient.InsuranceProvider name="InsuranceProvider")
+            br
+            button.btn.btn-primary#submit(type="submit") Save changes

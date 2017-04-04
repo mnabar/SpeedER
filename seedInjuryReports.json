@@ -1,0 +1,122 @@
+[
+  {
+    "description": "Broken foot",
+    "discomfortLevel": "4",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "10",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "Fractured wrist",
+    "discomfortLevel": "4",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "8",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "Pink Eye but I'm tough",
+    "discomfortLevel": "2",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "2",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "Hole in foot omg what is going on",
+    "discomfortLevel": "10",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "1",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "Broken foot",
+    "discomfortLevel": "4",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "9",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "Both shoulders are dislocated",
+    "discomfortLevel": "9",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "19",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "I think I have cancer",
+    "discomfortLevel": "1",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "14",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "Hard to breathe",
+    "discomfortLevel": "7",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "17",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "I'm not sure",
+    "discomfortLevel": "4",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "12",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "Heart attack",
+    "discomfortLevel": "10",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "20",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "Concussion",
+    "discomfortLevel": "10",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "18",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "I can't see",
+    "discomfortLevel": "8",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "24",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "I broke my back",
+    "discomfortLevel": "6",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "28",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "I twisted my ankle",
+    "discomfortLevel": "4",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "26",
+    "fk_email": "hello@patient.com"
+  },
+  {
+    "description": "I broke my pinky",
+    "discomfortLevel": "7",
+    "createdAt": "2014-02-01",
+    "updatedAt": "2014-02-01",
+    "fk_hospitalInjuryId": "21",
+    "fk_email": "hello@patient.com"
+  }
+]

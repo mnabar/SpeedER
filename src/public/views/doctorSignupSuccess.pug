@@ -1,0 +1,33 @@
+doctype html
+html
+head 
+  include ./partials/head.pug
+  style(type='text/css').
+    html, body {
+      height: 100%;
+      background: #fff;
+    }
+    .flex-parent {
+      height: 100%;
+      display: flex;
+    }
+    .flex-child {
+      margin: auto;
+    }
+    p {
+      margin-bottom: 50px;
+    }
+    .btn-return, .btn-return:hover {
+      background:#7c4c4c; 
+      color: #fff;
+    }
+body(style='font-family:Lato; text-align:center')
+  .container.flex-parent 
+    .flex-child
+      .row 
+        h1= "Congratulations! You have signed up as a doctor for SpeedER!"
+        p Within the next few days, a staff member from your hospital will verify your position, and we will send send you an official verification code.
+        p Make sure to revisit the doctor sign up page at that point and input that code!
+      .row 
+        form(action="/hospitalLogin/logout", method="GET")
+          button.btn.btn-default.btn-return(type="submit") Return to SpeedER's Homepage!

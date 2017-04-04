@@ -1,0 +1,30 @@
+doctype html
+html
+  include ./partials/head.pug
+  include ./navbar.pug
+  body(style='font-family:Lato')
+    .jumbotron(style='padding-top:0px')
+      p(style='text-align:right; font-size:15px; padding-bottom:20px; padding-top: 1vw; margin-right:1.5vw') Not a hospital staff member? <a href="/patient">Login as a patient</a>.
+      h1(style='text-align:center') Report your injury
+      h2(style='text-align:center; color:#666666') You picked a hospital! Let the doctors know your injury before you get there.
+
+    .container
+      .row
+        .col-sm-2
+        .col-sm-8(style='padding-right:40px')
+          h2(style="background:#99ccff; padding:30px 0px 30px 21px; font-weight:bold") Help us help you <span h2 style="font-weight:initial">and we'll match you with a doctor.</h2>
+          br
+          form(action="/", method="POST")
+            h3 State injury
+            <div class="input-group">
+            input.form-control(type='text', id="injury", name="email", placeholder="Type or dictate your injury")
+            <span class="input-group-addon">
+            <i class="fa fa-microphone" type="button", id="toggleRecording" aria-hidden="true"></i>
+            </span>
+            </div>
+            br
+            h3 Rate pain
+            p * please repeat this information once you have arrived at the hospital
+            input.form-control(type='password', name="password", placeholder="1-5")
+            br
+            button.btn.btn-default(type="submit", style="float:right; background:#99ccff") Submit report

@@ -1,0 +1,19 @@
+// implements a side navigation bar for the user-side website upon login
+// -- the purpose of this is to provide easy navigation between various forms for the user
+//    including navigating to their health profile, history of hospital visits, 
+//    modify their billing information, change password, etc. etc.
+
+// this implements the top navbar that functions as a quasi-header
+body(style='font-family:Lato')
+nav.navbar.navbar-default.navbar-fixed-top#navbar-white(role="navigation")
+  .navbar-collapse.collapse
+    <div class="container-fluid">
+      br
+      - if (patientName) {
+          p(style="float:right; font-size=30px") All done? <a href="/patient/logout", style="text-align:right">Logout</a>
+      - } else {
+          p(style="float:right") Make your trip to the ER less stressful by saving your info!<a href="/patient", style="text-align:right"> Click here </a>to login or register.
+      - }
+      ul.nav.navbar-nav.navbar-right
+    </div>
+

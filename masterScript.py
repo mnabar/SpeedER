@@ -1,0 +1,3 @@
+import seedHospitalsInDB
+import seedInjuryReportsInDB
+

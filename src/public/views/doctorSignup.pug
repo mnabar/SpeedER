@@ -1,0 +1,54 @@
+doctype html
+html
+  include ./partials/head.pug
+  body(style='font-family:Lato; background:#fff')
+    .jumbotron(style='padding-top:0px; background:#e28383; color:white')
+      p(style='text-align:right; font-size:15px; padding-bottom:20px; padding-top: 1vw; margin-right:1.5vw;') Not a doctor? <a href="/hospitalLogin" style="color: #594a4a">Login as a hospital staff administrator</a> | <a href="/patient" style="color: #594a4a">Login as a patient</a>
+      h1(style='text-align:center') Doctors, lend a hand!
+
+    .container
+      .row
+        .col-sm-1
+        .col-sm-5(style='border-right:2px solid #e28383; padding-right:40px')
+          h2 Step 1: Sign up now
+          h5(style = 'color:#737373') Help hospital staff administrators match you with an injured patient!
+          br
+          form(id='pRegForm', name="patientReg", action="/hospitalLogin/signup", method="POST", style="line-height:15px")
+            p Name <p id='nameAlert' style="display:none; font-weight:bold; color:#0066ff"> Names can only have alphabetic characters </p>
+            input.form-control(id='regName', type='text', name="name", placeholder="e.g. Barack Obama")
+            br
+            p Hospital<p id='specialtyAlert' style="display:none; font-weight:bold; color:#0066ff"> Select Your Hospital </p>
+
+            select.form-control(name="hospitalName")
+              each hospital in hospitals
+                option= hospital
+            br
+            p Email <p id='emailAlert' style="display:none; font-weight:bold; color:#0066ff"> Please enter a valid email </p>
+            input.form-control(id='regEmail', type='email', name="email", placeholder="email")
+            br
+            p Confirm Email <p id='emailChkAlert' style="display:none; font-weight:bold; color:#0066ff"> Emails do not match! </p>
+            input.form-control(id='regChkEmail', type='email', name="email2", placeholder="confirm email")
+            br
+            p Phone <p id='phoneAlert' style="display:none; font-weight:bold; color:#0066ff"> Phone numbers can only contain numeric digits </p>
+            input.form-control(id='regPhone', type='text', name="phoneNumber", placeholder="e.g. 6789998212")
+            br
+            p Confirm Phone <p id='phoneChkAlert' style="display:none; font-weight:bold; color:#0066ff"> Phone numbers do not match! </p>
+            input.form-control(id='regChkPhone', type='text', name="phoneNumber2", placeholder="confirm phone")
+            br
+            input.form-control(name="password", placeholder = "Password", type="hidden", value="aaaaaaa")
+            br
+            button.btn.btn-default(id="pRegBtn", type="submit", style="float:right; background:#7c4c4c; color: #fff") Register
+
+        .col-sm-5(style='padding-left:40px')
+          h2 Step 2: Verify Your Identity
+          h5(style = 'color:#737373') Your hospital staff members will take care of the rest!
+          br
+          form(action="/validate/account", method="POST")
+            p Email <p id='emailAlert' style="display:none; font-weight:bold; color:#0066ff"> Please enter a valid email </p>
+            input.form-control(id='regEmail', type='email', name="email", placeholder="email")
+            br
+            p Verification key (your hospital staff administrator should have sent you a key via email)
+            input.form-control(type='password', name="verifyKey", placeholder="key")
+            br
+            button.btn.btn-default(type="submit", style="float:right; background:#7c4c4c; color: #fff") Submit
+      

@@ -1,0 +1,56 @@
+style.
+	.input-group-addon:hover {
+		background: #ddd;
+		cursor: pointer;
+		cursor: hand;
+	}
+#confirm.modal.fade(role="dialog")
+	.modal-dialog
+		.modal-content
+			form(id="confirm" action="/report/confirm", method="POST", name="confirm-form", data-async)
+				.modal-header
+					button.close(type="button", data-dismiss="modal") X
+					h4.modal-title
+				.modal-body
+					.form-group
+						input.form-control(style={display:'none'} id="hospid" name="hospid")
+						label(for="description") Please describe your injury here:
+						.input-group
+							input.form-control(type='text', id="description", name="description", placeholder="Type your injury here, or dictate it by clicking the microphone icon!") 
+							span(class="input-group-addon" id="toggleRecording")
+								i(class="fa fa-microphone" type="button" aria-hidden="true")
+						label(for="pain-level") Please describe the pain level:
+						.radio
+							each i in [1,2,3,4,5,6,7,8,9,10] 
+								label.radio-inline
+									input(type="radio", name="discomfortLevel", id="discomfort-level-radio-"+i, value=""+i) 
+									span= i
+				.modal-footer
+					button.btn.btn-primary(type="submit", name="confirm-form") Confirm
+					button.btn.btn-default(data-dismiss="modal") Cancel
+script.
+	$('#confirm').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget)
+		var hospname = button.data('hospname')
+		var hospid = button.data('hospid')
+		var modal = $(this)
+		modal.find('.modal-title').text('Confirm visit to ' + hospname)
+		modal.find('#hospid').val(hospid)
+	});
+
+	$('form[data-async]').on('submit', function (event) {
+		var $form = $(this);
+		var $modal = $('#confirm');
+		var $target = $($form.attr('data-target'));
+		$.ajax({
+			type: $form.attr('method'),
+			url: $form.attr('action'),
+			data: $form.serialize(),
+			success: function(data, status) {
+				$target.html(data);
+			}
+		});
+		event.preventDefault();
+		$('#confirm').modal('hide');
+		$('#confirm').find("#hospid, #description").val("");
+	});
